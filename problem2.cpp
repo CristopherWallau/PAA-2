@@ -1,23 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
-int toleaf(int x, vector<pair<int, int>> adj[]) {
-    int max_length = 0;
-    for(auto i : adj[x]) {
-        max_length = max(max_length, toleaf(i.first, adj) + 1);
-    }
-    return max_length;
-}
-int maxlength(int x, vector<pair<int, int>> adj[]) {
-    int max_length = 0;
-    for(auto i : adj[x]) {
-        max_length = max(max_length, maxlength(i.first, adj) + 1);
-    }
-    return max_length;
-}
 int main() {
     int N, K, D;
     cin >> N >> K >> D;
     vector<int> flag_city[N];
+    queue<int> q;
+    int distance[N];
+    bool visited[N];
     for(int i = 0; i < N; i++) {
         int value;
         cin >> value;
