@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "compilar e rodar",
-            "command": "gcc",
+            "command": "g++",
             "args": [
                 "-g",
                 "${file}",
